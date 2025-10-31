@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Lora:wght@400;500;600&family=Satisfy&display=swap');
+@import "tailwindcss";
+
+/* Custom CSS Variables */
+:root {
+  --color-primary: #FF6B35;
+  --color-secondary: #6A0572;
+  --color-accent: #FFC300;
+  --color-background: #1A1A2E;
+}
+
+body {
+  background-color: #0f172a;
+  color: white;
+  font-family: 'Lora', serif;
+  margin: 0;
+  padding: 0;
+}
+
+.altar-level {
+  position: relative;
+  background: linear-gradient(to bottom, #92400e, #78350f);
+  border: 2px solid #b45309;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.papel-antiguo {
+  background: linear-gradient(to bottom right, #2d1f4d, #4a2f6b);
+  color: #374151;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 4px solid #fcd34d;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px rgba(255, 195, 0, 0.3);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: modalScaleIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Hover effects para elementos interactivos */
+.elemento-hover:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto de pulso para slots vacíos */
+.slot-vacio {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Animaciones adicionales para el altar interactivo */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Estilos para el scrollbar del panel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(88, 28, 135, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.8);
+}
+
+/* Efectos hover para elementos arrastrables */
+.elemento-arrastrable:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Estilos para el altar tradicional */
+.altar-tradicional {
+  background: linear-gradient(to bottom, #8b4513, #654321, #3e2723);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.nivel-altar {
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.9), rgba(124, 58, 237, 0.9));
+  border: 3px solid #d97706;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Estilos responsivos para el nuevo layout */
+@media (max-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    gap: 20px !important;
+  }
+}
+
+/* Animación para notificaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
